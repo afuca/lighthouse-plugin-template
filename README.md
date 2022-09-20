@@ -86,14 +86,6 @@ const requests = await NetworkRecords.request(devtoolsLog, context);
 * [API Artifacts definition](https://github.com/GoogleChrome/lighthouse/blob/master/types/artifacts.d.ts)
 * [Default audits of Lighthouse](https://github.com/GoogleChrome/lighthouse/tree/master/core/audits)
 
-### Development process
-
-* Analyze the case
-* Describe how and what to do, limits and constraints
-* Define the textual description
-* Define the scoring
-* Code & test
-
 # Plugins ideas
 
 * Image lazy-loading
@@ -105,6 +97,14 @@ const requests = await NetworkRecords.request(devtoolsLog, context);
 * a11y: Listing of suspects 'alt' attributs (less than 2 chars, ...).
 * SPA: Try to change de weight of default JS plugins to be more compliant with SPA.
 
-## For hard-core coder only
+### For hard-core coder only
 
 * Try to get CPU, memory, and other usage metrics of the page (with `devtoolsLog`? Take a look at current default plugins as well)
+
+## Development process
+
+* Analyze the case
+* Describe how and what to do, limits and constraints
+* Define the textual description
+* Define the scoring
+* Code & test
