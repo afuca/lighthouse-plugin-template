@@ -1,0 +1,12 @@
+{
+  "name": "lighthouse-plugin-template",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./plugin.js",
+  "scripts": {
+    "audit": "NODE_PATH=.. npx lighthouse --plugins=lighthouse-plugin-template --view --"
+  },
+  "dependencies": {
+    "lighthouse": "^9.6.7"
+  }
+}
