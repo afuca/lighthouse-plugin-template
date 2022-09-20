@@ -94,7 +94,7 @@ const requests = await NetworkRecords.request(devtoolsLog, context);
 * Define the scoring
 * Code & test
 
-### Plugins ideas
+# Plugins ideas
 
 * Image lazy-loading
 * Big images are not resized
@@ -102,11 +102,9 @@ const requests = await NetworkRecords.request(devtoolsLog, context);
 * Limit numbers of CSS
 * Do not preload Video object (use clickable cover instead)
 * Do not preload Map object (use clickable cover instead)
-
 * a11y: Listing of suspects 'alt' attributs (less than 2 chars, ...).
-
 * SPA: Try to change de weight of default JS plugins to be more compliant with SPA.
 
-#### **For hard-core coder only**
+## For hard-core coder only
 
 * Try to get CPU, memory, and other usage metrics of the page (with `devtoolsLog`? Take a look at current default plugins as well)
