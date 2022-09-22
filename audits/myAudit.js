@@ -11,7 +11,13 @@ class MyAudit extends Audit {
       failureTitle: 'myAudit failed',
       description: 'myAudit description',
       scoreDisplayMode: Audit.SCORING_MODES.NUMERIC,
-      requiredArtifacts: ['devtoolsLogs', 'DOMStats'],
+      requiredArtifacts: [
+        'devtoolsLogs',
+        'DOMStats',
+        'ImageElements',
+        'LinkElements',
+        'MetaElements',
+        'ScriptElements'],
     };
   }
 
