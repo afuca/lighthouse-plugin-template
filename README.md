@@ -25,6 +25,16 @@ For example:
 npm run audit https://cirb.brussels/
 ```
 
+## Debug plugin (VSCode)
+
+1. Add breakpoints or logs to your code
+
+2. In the terminal, run lighthouse in debug mode: `npm run debug <page url>`
+
+3. Right after, run the debugger (F5)
+
+That's all
+
 
 # Contents
 

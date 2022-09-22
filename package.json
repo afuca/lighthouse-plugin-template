@@ -4,7 +4,8 @@
   "private": true,
   "main": "./plugin.js",
   "scripts": {
-    "audit": "NODE_PATH=.. npx lighthouse --plugins=lighthouse-plugin-template --view --"
+    "audit": "NODE_PATH=.. npx lighthouse --plugins=lighthouse-plugin-template --view --",
+    "debug": "NODE_PATH=.. npx --node-arg='--inspect' lighthouse --chrome-flags='--headless' --plugins=lighthouse-plugin-template --only-audits myAudit --"
   },
   "dependencies": {
     "lighthouse": "^9.6.7"
