@@ -29,9 +29,9 @@ npm run audit https://cirb.brussels/
 
 1. Add breakpoints or logs to your code
 
-2. In the terminal, run lighthouse in debug mode: `npm run debug <page url>`
+2. Run the debugger (F5)
 
-3. Right after, run the debugger (F5)
+3. In the terminal, run lighthouse in debug mode: `npm run debug <page url>`
 
 That's all
 
@@ -41,6 +41,7 @@ That's all
 * **package.json** - declares the plugin's entry point (plugin.js)
 * **plugin.js** - instructs Lighthouse to run the plugin's own audit (audits/myAudit.js); describes the new category and its details for the report
 * **audits/myAudit.js** - the new audit to run in addition to Lighthouse's default audits
+* **gatherers/myGatherer.js** - the gatherer collecting data from the page
 
 ## Audit structure
 
@@ -61,6 +62,14 @@ The audit() property is a function the computes the audit results for the report
 ### Score
 
 The primary objective of the audit function is to return a **score from 0 to 1** based on the data observed in artifacts.
+
+## Gatherer
+
+Gatherers can read information from the page to generate artifacts which are later used by audits.
+
+The `gatherers/MyGatherer` example can be modified for your use.
+
+The current code is an example that query all dom elements and return _tagName_ and _nodeDetail_ in a list.
 
 
 # Plugin doc
@@ -91,10 +100,16 @@ const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
 const requests = await NetworkRecords.request(devtoolsLog, context);
 ```
 
+### Example 4 : My custom gatherer
+```javascript
+const myGatherer = artifacts.MyGatherer
+```
+
 ### Lighthouse plugin API
 * [More documentation about plugin API](https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md#api)
 * [API Artifacts definition](https://github.com/GoogleChrome/lighthouse/blob/master/types/artifacts.d.ts)
 * [Default audits of Lighthouse](https://github.com/GoogleChrome/lighthouse/tree/master/core/audits)
+* [Default gatherers of Lighthouse](https://github.com/GoogleChrome/lighthouse/tree/master/core/gather/gatherers)
 
 # Plugins ideas
 
@@ -109,7 +124,7 @@ const requests = await NetworkRecords.request(devtoolsLog, context);
 
 ### For hard-core coder only
 
-* Try to get CPU, memory, and other usage metrics of the page (with `devtoolsLog`? Take a look at current default plugins as well)
+* Try to get CPU, memory, and other usage metrics of the page.
 
 ## Development process
 

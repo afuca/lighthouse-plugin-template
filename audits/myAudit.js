@@ -12,12 +12,48 @@ class MyAudit extends Audit {
       description: 'myAudit description',
       scoreDisplayMode: Audit.SCORING_MODES.NUMERIC,
       requiredArtifacts: [
-        'devtoolsLogs',
-        'DOMStats',
-        'ImageElements',
-        'LinkElements',
-        'MetaElements',
-        'ScriptElements'],
+          //'DevtoolsLog',
+          'devtoolsLogs',
+          'traces',
+
+          'Accessibility',
+          'AnchorElements',
+          //'CacheContents',
+          'ConsoleMessages',
+          'CSSUsage',
+          'Doctype',
+          'DOMStats',
+          'EmbeddedContent',
+          'FontSize',
+          'Inputs',
+          'GlobalListeners',
+          'IFrameElements',
+          'ImageElements',
+          'InstallabilityErrors',
+          'InspectorIssues',
+          'JsUsage',
+          'LinkElements',
+          'MainDocumentContent',
+          'MetaElements',
+          'NetworkUserAgent',
+          'OptimizedImages',
+          'PasswordInputsWithPreventedPaste',
+          'ResponseCompression',
+          'RobotsTxt',
+          'ServiceWorker',
+          'ScriptElements',
+          //'Scripts',
+          'SourceMaps',
+          'Stacks',
+          'TagsBlockingFirstPaint',
+          'TapTargets',
+          'TraceElements',
+          'ViewportDimensions',
+          'WebAppManifest',
+
+          // Our custom gatherer (gatherers/myGatherer.js):
+          'MyGatherer'
+      ],
     };
   }
 
@@ -25,6 +61,7 @@ class MyAudit extends Audit {
     // Write your audit code here
 
     return {
+      // Adapt the scoring
       score: 0.5
     };
   }
