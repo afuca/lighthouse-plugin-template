@@ -7,10 +7,10 @@ module.exports = {
   ],
 
   category: {
-    title: 'Audit template',
-    description: 'Template for lighthouse plugin with empty audit',
+    title: 'Images alternatives validiy check',
+    description: 'Images alt attibute should be understandable and give info.',
     auditRefs: [
-      {id: 'myAudit', weight: 1},
+      {id: 'img-alt-check', weight: 1},
     ],
   },
 };

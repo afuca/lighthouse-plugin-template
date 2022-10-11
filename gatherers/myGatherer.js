@@ -15,7 +15,7 @@ class MyGatherer extends Gatherer {
 
     const mainFn = () => {
       // Query elements
-      const elements = document.querySelectorAll("*");
+      const elements = document.querySelectorAll("img");
       const elementsArray = Array.from(elements);
 
       // Filter elements
@@ -24,7 +24,10 @@ class MyGatherer extends Gatherer {
 
       // Build response objects
       const elementSummaries = failingElements.map(element => ({
-        tagName: element.tagName,
+        alt: element.alt,
+        ariaLabel: element.ariaLabel,
+        src: element.src,
+        role: element.role,
         node: getNodeDetails(element)
       }));
 
