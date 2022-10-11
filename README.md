@@ -105,6 +105,37 @@ const requests = await NetworkRecords.request(devtoolsLog, context);
 const myGatherer = artifacts.MyGatherer
 ```
 
+### Example 5 : Display some elements
+You can display a table of elements with the report (for example, elements that failed).
+
+Do do so, you have to fist define table header and then return it with the liste of elements into the "details".
+
+```javascript
+ /** @type {LH.Audit.Details.Table['headings']} */
+    failedImg = [
+        {src: 'http://mysite.com/img/img.jpg', alt: 'test', error: 'This alternative is too short'}
+    ];
+    const headings = [
+      {key: 'src', itemType: 'thumbnail', text: ''},
+      {key: 'src', itemType: 'url', text: 'url'},
+      {key: 'alt', itemType: 'text', text: 'Alternative text'},
+      {key: 'error', itemType: 'text', text: 'Error'},
+    ];
+
+    return {
+      score: score,
+      details: Audit.makeTableDetails(headings, failedImg)
+    };
+```
+
+The elements is a list of objects with properties.
+
+Headings is a list of object that define the columns titles : 
+
+* **key** : the key of the object that should be used to get the value to display ;
+* **itemType**: the type of data. It can be text, url, thumbnail, ... Lightouse will display it according to the type : url will display clickable links, thumbnail will display an image ;
+* **text**: the title of the colum.
+
 ### Lighthouse plugin API
 * [More documentation about plugin API](https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md#api)
 * [API Artifacts definition](https://github.com/GoogleChrome/lighthouse/blob/master/types/artifacts.d.ts)
