@@ -130,7 +130,7 @@ Do do so, you have to fist define table header and then return it with the liste
 
 The elements is a list of objects with properties.
 
-Headings is a list of object that define the columns titles : 
+Headings is a list of object that define the columns titles :
 
 * **key** : the key of the object that should be used to get the value to display ;
 * **itemType**: the type of data. It can be text, url, thumbnail, ... Lightouse will display it according to the type : url will display clickable links, thumbnail will display an image ;
