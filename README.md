@@ -36,7 +36,7 @@ npm run audit https://cirb.brussels/
 That's all
 
 
-# Contents
+# Architecture
 
 * **package.json** - declares the plugin's entry point (plugin.js)
 * **plugin.js** - instructs Lighthouse to run the plugin's own audit (audits/myAudit.js); describes the new category and its details for the report
@@ -137,6 +137,7 @@ Headings is a list of object that define the columns titles :
 * **text**: the title of the colum.
 
 ### Lighthouse plugin API
+* [Lighthouse Architecture](https://github.com/GoogleChrome/lighthouse/blob/main/docs/architecture.md)
 * [More documentation about plugin API](https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md#api)
 * [API Artifacts definition](https://github.com/GoogleChrome/lighthouse/blob/master/types/artifacts.d.ts)
 * [Default audits of Lighthouse](https://github.com/GoogleChrome/lighthouse/tree/master/core/audits)
