@@ -18,12 +18,8 @@ class MyGatherer extends Gatherer {
       const elements = document.querySelectorAll("*");
       const elementsArray = Array.from(elements);
 
-      // Filter elements
-      const failingElements = elementsArray
-        .filter(element => true)
-
       // Build response objects
-      const elementSummaries = failingElements.map(element => ({
+      const elementSummaries = elementsArray.map(element => ({
         tagName: element.tagName,
         node: getNodeDetails(element)
       }));
